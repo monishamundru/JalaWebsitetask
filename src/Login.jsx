@@ -8,21 +8,28 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+
     if (!username || !password) {
       alert("Please enter username and password");
       return;
     }
 
-    navigate("/dashboard");
+    if (username === "admin" && password === "admin") {
+      navigate("/dashboard");
+    } else {
+      alert("Invalid Credentials");
+    }
   };
 
   return (
-    <div>
+    <div style={{ padding: "30px" }}>
+      <h1>Employee Management System</h1>
+
       <h2>Login</h2>
 
       <input
         type="text"
-        placeholder="Username"
+        placeholder="Enter Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
@@ -32,7 +39,7 @@ function Login() {
 
       <input
         type="password"
-        placeholder="Password"
+        placeholder="Enter Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />

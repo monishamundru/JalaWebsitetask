@@ -2,9 +2,9 @@
   "employees": [
     {
       "firstName": "manisha",
-      "lastName": "dammalapate",
-      "email": "dammalapatimanisha@gmail.com",
-      "id": "uV7pj7mYFaI"
+      "lastName": "Mundru",
+      "email": "mundrumanisha@gmail.com",
+      "id": "pqjEUzuldwE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div>
-      <h3>Menu</h3>
+      <h2>Menu</h2>
 
       <ul>
         <li>

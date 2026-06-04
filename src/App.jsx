@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./Components/NotFound";
+import "./App.css";
 
 import Login from "./Login";
 import Dashboard from "./Dashboard";
@@ -15,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/more" element={<More />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

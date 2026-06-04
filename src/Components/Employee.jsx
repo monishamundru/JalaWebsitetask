@@ -8,6 +8,8 @@ function Employee() {
 
   const [employees, setEmployees] = useState([]);
   const [editId, setEditId] = useState(null);
+  const [search, setSearch] = useState("");
+ 
 
   // GET Employees
   const fetchEmployees = async () => {
@@ -27,17 +29,28 @@ function Employee() {
   }, []);
 
   // DELETE Employee
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(
-        `http://localhost:3002/employees/${id}`
-      );
+    const handleDelete = async (id) => {
 
-      fetchEmployees();
-    } catch (error) {
-      console.log(error);
+    const confirmDelete = window.confirm(
+        "Are you sure you want to delete this employee?"
+    );
+
+    if (!confirmDelete) {
+        return;
     }
-  };
+
+    try {
+        await axios.delete(
+        `http://localhost:3002/employees/${id}`
+        );
+
+        fetchEmployees();
+
+        alert("Employee Deleted");
+    } catch (error) {
+        console.log(error);
+    }
+    };
   //Edit Employee
   const handleEdit = (employee) => {
     setFirstName(employee.firstName);
@@ -63,8 +76,8 @@ function Employee() {
         setEmail("");
 
         setEditId(null);
+        alert("Employee Updated Successfully");
 
-        alert("Employee Updated");
     } catch (error) {
         console.log(error);
     }
@@ -102,53 +115,56 @@ function Employee() {
 
   return (
     <div>
-      <h1>Employee Page</h1>
+    <div>
+    <h2>Add Employee</h2>
 
-      <input
+    <input
         type="text"
         placeholder="First Name"
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
-      />
+    />
 
-      <br />
-      <br />
+    <br />
 
-      <input
+    <input
         type="text"
         placeholder="Last Name"
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
-      />
+    />
 
-      <br />
-      <br />
+    <br />
 
-      <input
+    <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      />
+    />
 
-      <br />
-      <br />
+    <br />
 
-      {editId ? (
-        <button onClick={handleUpdate}>
-            Update
-        </button>
-        ) : (
-        <button onClick={handleSave}>
-            Save
-        </button>
-        )}
+    <button
+    onClick={editId ? handleUpdate : handleSave}
+    >
+    {editId ? "Update" : "Save"}
+    </button>
+    </div>
 
       <hr />
+      <input
+        type="text"
+        placeholder="Search Employee"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        />
+
+        <br />
+        <br />
 
       <h2>Employee List</h2>
       <h3>Total Employees: {employees.length}</h3>
-
       <table border="1" cellPadding="10">
         <thead>
           <tr>
@@ -161,8 +177,20 @@ function Employee() {
         </thead>
 
         <tbody>
-          {employees.map((employee) => (
-            <tr key={employee.id}>
+          {employees
+            .filter((employee) =>
+                employee.firstName
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
+                employee.lastName
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
+                employee.email
+                .toLowerCase()
+                .includes(search.toLowerCase())
+            )
+            .map((employee) => (
+              <tr key={employee.id}>
               <td>{employee.firstName}</td>
               <td>{employee.lastName}</td>
               <td>{employee.email}</td>
