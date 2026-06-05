@@ -2,9 +2,40 @@
   "employees": [
     {
       "firstName": "manisha",
-      "lastName": "Mundru",
-      "email": "mundrumanisha@gmail.com",
+      "lastName": "Dammalapaati",
+      "email": "manishadammalapati@gmail.com",
       "id": "pqjEUzuldwE"
+    },
+    {
+      "firstName": "monisha",
+      "lastName": "Mundru",
+      "email": "mundrumonisha@gmail.com",
+      "id": "HmLju2ExHdk"
+    },
+    {
+      "firstName": "Ravindra Babu",
+      "lastName": "Mundru",
+      "email": "mundruravindrababu@gmail.com",
+      "id": "Riog7OtStAA"
+    },
+    {
+      "firstName": "Prameela ",
+      "lastName": "Mundru",
+      "email": "prameelamundru@gmail.com",
+      "id": "cxpigHfGPF8"
+    },
+    {
+      "firstName": "Yamini",
+      "lastName": "Mundru",
+      "email": "mundruyaminni@gmail.com",
+      "id": "jN-zAjiLlPE"
+    },
+    {
+      "firstName": "Mounika",
+      "lastName": "Bhanavath",
+      "email": "mounikabhanaavath@gmail.com",
+      "id": "7Vst1BRIB2g"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
