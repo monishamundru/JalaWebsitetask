@@ -36,6 +36,5 @@
       "email": "mounikabhanaavath@gmail.com",
       "id": "7Vst1BRIB2g"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
