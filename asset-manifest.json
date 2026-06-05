@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/JalaWebsitetask/static/css/main.efe5b300.css",
-    "main.js": "/JalaWebsitetask/static/js/main.d47e3f30.js",
+    "main.js": "/JalaWebsitetask/static/js/main.89f4ceca.js",
     "static/js/453.20da108c.chunk.js": "/JalaWebsitetask/static/js/453.20da108c.chunk.js",
     "index.html": "/JalaWebsitetask/index.html",
     "main.efe5b300.css.map": "/JalaWebsitetask/static/css/main.efe5b300.css.map",
-    "main.d47e3f30.js.map": "/JalaWebsitetask/static/js/main.d47e3f30.js.map",
+    "main.89f4ceca.js.map": "/JalaWebsitetask/static/js/main.89f4ceca.js.map",
     "453.20da108c.chunk.js.map": "/JalaWebsitetask/static/js/453.20da108c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.efe5b300.css",
-    "static/js/main.d47e3f30.js"
+    "static/js/main.89f4ceca.js"
   ]
 }
