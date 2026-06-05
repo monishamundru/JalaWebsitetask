@@ -14,11 +14,7 @@ function Login() {
       return;
     }
 
-    if (username === "admin" && password === "admin") {
-      navigate("/dashboard");
-    } else {
-      alert("Invalid Credentials");
-    }
+    navigate("/dashboard");
   };
 
   return (
